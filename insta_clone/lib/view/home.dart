@@ -13,6 +13,8 @@ import 'package:insta_clone/service/controller.dart';
 
 import 'package:insta_clone/model/dummyRepo.dart';
 
+import 'mypage.dart';
+
 List<Color> colorGradientInstagram = [
   Color.fromRGBO(129, 52, 175, 1.0),
   Color.fromRGBO(129, 52, 175, 1.0),
@@ -33,6 +35,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   RefreshController _refreshController = RefreshController(initialRefresh: false);
   final stateController controller = Get.put(stateController());
 
+  List<Widget> pageList = [
+    HomePage(),
+    MyPage(),
+  ];
+
+
   @override
   void dispose() {
     super.dispose();
@@ -44,8 +52,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return Scaffold(
       backgroundColor: Theme.of(context).canvasColor,
       appBar: appBar(),
-      body: body(context),
-      bottomNavigationBar: bottomNavigationBar(context),
+      body: body(context),      
     );
   }
 
@@ -53,7 +60,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return AppBar(
       elevation: 0,
       backgroundColor: Theme.of(context).canvasColor,
-      automaticallyImplyLeading: true,
+      automaticallyImplyLeading: false,
       title: Text(
         'Instagram',
         style: GoogleFonts.cookie(
@@ -273,42 +280,6 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           )
         ],
       ),
-    );
-  }
-
-  Widget bottomNavigationBar(BuildContext context) {
-    return Theme(
-      data: Theme.of(context)
-          .copyWith(canvasColor: Theme.of(context).canvasColor),
-      child: BottomNavigationBar(
-          elevation: 10.0,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.home, size: 24.0), label: ""),
-            BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.search, size: 24.0), label: ""),
-            BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.plusSquare, size: 24.0),
-                label: ""),
-            BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.heart, size: 24.0), label: ""),
-            BottomNavigationBarItem(
-                icon: CircleAvatar(
-                  radius: 12,
-                  child: Container(
-                      width: 30,
-                      height: 30,
-                      child: Image.asset(dummyList[0]["profileURL"],fit:BoxFit.fill,),
-                ),                
-              ),
-              label:"",
-            ),
-          ],
-          currentIndex: 0,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.black54),
     );
   }
 
