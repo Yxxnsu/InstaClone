@@ -5,6 +5,7 @@ List<Map<String, dynamic>> dummyList = [
     "live": false,
     "vista": false,
     "profileURL":"assets/me.png",
+    "url_image_post":"https://www.dzoom.org.es/wp-content/uploads/2007/02/canon-mejorar-fotografo-consejos-principiantes-novatos-810x540.jpg",
     "dashes": 1,
   },
   {
