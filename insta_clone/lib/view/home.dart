@@ -5,9 +5,11 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insta_clone/service/controller.dart';
 
 import 'package:insta_clone/model/dummyRepo.dart';
 
@@ -25,11 +27,11 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  
   final textStyle = TextStyle(color: Colors.black);
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
+  final stateController controller = Get.put(stateController());
 
   @override
   void dispose() {
@@ -57,10 +59,15 @@ class _HomePageState extends State<HomePage>
         style: GoogleFonts.cookie(
           color: Colors.black,
           fontSize: 30,
-        )
+        ),
       ),
       actions: [
-        Center(child: FaIcon(Icons.send, color: Colors.black)),
+        Center(
+          child: FaIcon(
+            Icons.send, 
+            color: Colors.black
+          ),
+        ),
       ],
     );
   }
@@ -134,12 +141,7 @@ class _HomePageState extends State<HomePage>
           ),
         ),
         Container(
-          color: Colors.black12,
-          // child: Image.network(
-          //   dummyList[index]["url_image_post"],
-          //   fit:BoxFit.cover,
-          //   width: MediaQuery.of(context).size.width, 
-          // ),
+          color: Colors.black12,         
           child: CachedNetworkImage(
               fadeInDuration: Duration(milliseconds: 200),
               fit: BoxFit.cover,
