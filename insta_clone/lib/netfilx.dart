@@ -218,42 +218,39 @@ class PagelistaNetflixState extends State<PagelistaNetflix> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Expanded(
-                          child: InkWell(
-                              splashColor: Colors.green,
-                              onTap: () {},
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.add,
-                                      size: 24.0,
-                                    ),
-                                    Text("Mi lista",
-                                        style: TextStyle(fontSize: 10.0))
-                                  ]))),
-                      // TODO:  Update
+                        child: InkWell(
+                          splashColor: Colors.green,
+                          onTap: () {},
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(
+                                Icons.add,
+                                size: 24.0,
+                              ),
+                              Text("Mi lista",
+                                style: TextStyle(fontSize: 10.0))
+                            ]
+                          ),
+                        ),
+                      ),                      
                       Expanded(
-                          child: RaisedButton.icon(
-                        icon: Icon(
-                          Icons.play_arrow,
-                          color: Theme.of(context).brightness == Brightness.dark
-                              ? Colors.black
-                              : Colors.white,
-                        ),
-                        label: Text(
-                          "Reproducir",
-                          style: TextStyle(
+                        child: RaisedButton.icon(
+                          icon: Icon(
+                            Icons.play_arrow,
+                            color: Colors.black,
+                          ),
+                          label: Text(
+                            "Reproducir",
+                            style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Theme.of(context).brightness ==
-                                      Brightness.dark
-                                  ? Colors.black
-                                  : Colors.white),
-                        ),
-                        onPressed: () {},
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white
-                            : Colors.black,
-                      )),
+                              color: Colors.black,
+                            ),
+                          ),
+                          onPressed: () {},
+                          color: Colors.black,
+                        )
+                      ),
                       Expanded(
                           child: InkWell(
                               splashColor: Colors.green,
