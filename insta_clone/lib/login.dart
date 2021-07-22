@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:insta_clone/view/home.dart';
 
 class LoginPage extends StatelessWidget {
+  
   final mainColor = Colors.black;
   final defaultStyle = TextStyle(color: Colors.white);
   String? _inputID;
@@ -38,10 +39,12 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Instagram',
-                  style: GoogleFonts.cookie(fontSize: 50, color: Colors.white)),
-              SizedBox(
-                height: 30,
+                style: GoogleFonts.cookie(
+                  fontSize: 50, 
+                  color: Colors.white
+                ),
               ),
+              SizedBox(height: 30,),
               _buildTextIDForm('Username'),
               SizedBox(height: 20,),
               _buildTextPWForm('Password'),
@@ -119,7 +122,11 @@ class LoginPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),            
               border: Border.all(color: Colors.white70),
             ),
-            child: Text('LOGIN',style:defaultStyle,textAlign: TextAlign.center,),          
+            child: Text(
+              'LOGIN',
+              style:defaultStyle,
+              textAlign: TextAlign.center,
+            ),          
           ),
         ),
         SizedBox(height: 20),
@@ -128,25 +135,15 @@ class LoginPage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              child: Divider(
-                thickness: 1,
-              ),
-            ),            
+            Expanded(child: Divider(thickness: 1),),            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text('O', style: defaultStyle),
             ),
-            Expanded(
-              child: Divider(
-                thickness: 1,
-              ),
-            ),
+            Expanded(child: Divider(thickness: 1,),),
           ],
         ),
-        SizedBox(
-          height: 20,
-        ),
+        SizedBox(height: 20,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
